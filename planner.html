@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Academic Planner | Richard Uwumwonse</title>
+  <meta name="description" content="Interactive academic task planner with priority tracking and progress visualization.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Mono&family=Public+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a href="index.html" class="logo">Richard Uwumwonse</a>
+      <div class="nav-cluster">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="planner.html" class="active">Planner</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Switch to terminal theme" title="Toggle theme">
+          <span class="theme-icon" aria-hidden="true">&#9680;</span>
+          <span class="theme-label">Terminal</span>
+        </button>
+      </div>
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <header class="page-head">
+      <p class="kicker">Academic planner &middot; COS 106 &middot; <span class="city-clock">WAT</span></p>
+      <h1>What's due next</h1>
+      <p class="lead">Add coursework, revision tasks, and lab goals. Check them off as you finish &mdash; your tasks automatically persist in your browser.</p>
+    </header>
+
+    <section class="planner">
+      <!-- Quick add suggestion chips -->
+      <div class="quick-add-wrap">
+        <span class="quick-add-label">Quick suggestions:</span>
+        <div class="quick-chips">
+          <button type="button" class="quick-chip" data-title="Review SOC analysis incident notes" data-priority="medium">+ SOC Notes</button>
+          <button type="button" class="quick-chip" data-title="Submit COS 106 course project" data-priority="high">+ COS 106 Project</button>
+          <button type="button" class="quick-chip" data-title="Test Python recon engine on testbed VM" data-priority="high">+ Recon Test</button>
+          <button type="button" class="quick-chip" data-title="Read TryHackMe write-up on privilege escalation" data-priority="low">+ Read Writeup</button>
+        </div>
+      </div>
+
+      <form id="task-form" class="task-form" novalidate>
+        <input type="text" id="task-title" placeholder="e.g. Complete practical physics lab report" aria-label="Task title" required>
+        <input type="date" id="task-due" aria-label="Due date">
+        <select id="task-priority" aria-label="Priority">
+          <option value="high">High priority</option>
+          <option value="medium" selected>Medium priority</option>
+          <option value="low">Low priority</option>
+        </select>
+        <button type="submit" class="btn">Add Task</button>
+      </form>
+
+      <div id="celebration-banner" class="celebration-banner">
+        &#127881; All planned tasks are complete! Great headway today.
+      </div>
+
+      <div class="planner-summary">
+        <p id="task-counter" class="note"></p>
+        <span id="task-encouragement" class="note"></span>
+      </div>
+
+      <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <div id="progress-bar" class="progress-bar"></div>
+      </div>
+
+      <div class="filters" role="tablist" aria-label="Filter tasks">
+        <button class="filter active" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button class="filter" data-filter="active" role="tab" aria-selected="false">To do</button>
+        <button class="filter" data-filter="completed" role="tab" aria-selected="false">Completed</button>
+      </div>
+
+      <ul id="task-list" class="task-list"></ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Richard Uwumwonse. Built for COS 106, Miva Open University.</p>
+      <p><a href="https://github.com/thecybervendetta" target="_blank" rel="noopener">GitHub</a> &middot;
+         <a href="https://linkedin.com/in/richard-uwumwonse" target="_blank" rel="noopener">LinkedIn</a> &middot;
+         <a href="mailto:r.uwumwonse1504@miva.edu.ng">Email</a></p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/planner.js"></script>
+</body>
+</html>

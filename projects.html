@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects | Richard Uwumwonse</title>
+  <meta name="description" content="Security tools and web projects by Richard Uwumwonse.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Mono&family=Public+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a href="index.html" class="logo">Richard Uwumwonse</a>
+      <div class="nav-cluster">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html" class="active">Projects</a></li>
+          <li><a href="planner.html">Planner</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Switch to terminal theme" title="Toggle theme">
+          <span class="theme-icon" aria-hidden="true">&#9680;</span>
+          <span class="theme-label">Terminal</span>
+        </button>
+      </div>
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <header class="page-head">
+      <p class="kicker">Projects &middot; Selected Work &middot; <span class="city-clock">WAT</span></p>
+      <h1>Things I've built</h1>
+      <p class="lead">Phishing defence platforms, defensive recon tools, and responsive web applications. Click any terminal screenshot to expand.</p>
+    </header>
+
+    <!-- Interactive Category Filter -->
+    <div class="project-controls" role="tablist" aria-label="Filter projects">
+      <button class="filter-btn active" data-category="all" role="tab" aria-selected="true">All Projects (6)</button>
+      <button class="filter-btn" data-category="security" role="tab" aria-selected="false">Security &amp; Recon (3)</button>
+      <button class="filter-btn" data-category="web" role="tab" aria-selected="false">Web Applications (3)</button>
+    </div>
+
+    <article class="project reveal" id="griffin-soc" data-category="security">
+      <div class="shot" title="Griffin-SOC walkthrough video">
+        <iframe class="video-embed" src="https://www.youtube-nocookie.com/embed/NmuTdr_8w1o" title="Griffin-SOC project walkthrough by Richard Uwumwonse" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <div>
+        <p class="meta">Phishing defence &middot; NLP &middot; Stateful microservices</p>
+        <h2>Griffin-SOC</h2>
+        <p>One of my most prized projects: an event-driven, AI-automated phishing email gateway. I architected it to actively monitor inboxes, defang malicious indicators of compromise (IOCs) and triage threats using Natural Language Processing (NLP).</p>
+        <p>Localized, stateful microservices remove external webhook notification dependencies, keeping protection local and latency low. Its React frontend, Griffin-Shield, brings real-time monitoring and forensic triage into one view.</p>
+        <div class="links">
+          <a href="https://github.com/thecybervendetta/Griffin-SOC" target="_blank" rel="noopener">View on GitHub &rarr;</a>
+          <a href="https://youtu.be/NmuTdr_8w1o" target="_blank" rel="noopener">Watch on YouTube &rarr;</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="project reveal" id="recon-engine" data-category="security">
+      <div class="shot">
+        <img src="images/recon.png" alt="Terminal output from the recon engine showing in-scope hosts scanned and an out-of-scope host skipped" width="1000" height="625" loading="lazy">
+        <span class="shot-badge">Click to enlarge</span>
+      </div>
+      <div>
+        <p class="meta">Python &middot; Network recon &middot; Scope enforcement</p>
+        <h2>Scope-Safe Recon Engine</h2>
+        <p>A reusable recon platform that handles DNS and wildcards, TLS/SNI, virtual-host enumeration, service scanning and fingerprinting. It checks every target against the allowed CIDR, hostname and port scope before any network call, so out-of-scope decoys receive zero packets.</p>
+        <p>I used its output to capture the private user.txt flag in an assessment environment and generate a clean attack-surface inventory.</p>
+        <div class="links">
+          <a href="https://github.com/thecybervendetta/Scope-Safe-Recon-Engine" target="_blank" rel="noopener">View on GitHub &rarr;</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="project reveal" id="exploit-chain" data-category="security">
+      <div class="shot">
+        <img src="images/exploit.png" alt="Terminal output from an automated exploit chain running preflight checks, each stage, and a failed negative test after patching" width="1000" height="625" loading="lazy">
+        <span class="shot-badge">Click to enlarge</span>
+      </div>
+      <div>
+        <p class="meta">Python &middot; Exploit development &middot; Patch verification</p>
+        <h2>Automated Exploit Chain</h2>
+        <p>A foothold-to-root exploit chain for an offline VM, written in Python without Metasploit. It runs preflight checks, uses strict timeouts, fails safely and cleans up after itself.</p>
+        <p>I ran it repeatedly from a clean snapshot, then applied minimal root-cause patches, re-ran the exploit as a negative test and confirmed the intended service still functioned properly.</p>
+        <div class="links">
+          <a href="https://github.com/thecybervendetta/Automated-Exploit-Chain" target="_blank" rel="noopener">View on GitHub &rarr;</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="project reveal" id="moviebase" data-category="web">
+      <div class="shot">
+        <img src="images/moviebase.png" alt="Screenshot of the MovieBase application interface" width="1000" height="625" loading="lazy">
+        <span class="shot-badge">Click to enlarge</span>
+      </div>
+      <div>
+        <p class="meta">React &middot; JavaScript &middot; REST API</p>
+        <h2>MovieBase</h2>
+        <p>A dynamic movie database application built with React and TMDB's REST API. It allows users to browse trending releases, search across vast catalogues, and save/remove favorites with instant client-side state caching.</p>
+        <div class="links">
+          <a href="https://movie-base-topaz.vercel.app/" target="_blank" rel="noopener">Try the app &rarr;</a>
+          <a href="https://github.com/thecybervendetta/MovieBase" target="_blank" rel="noopener">View on GitHub &rarr;</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="project reveal" id="weathernow" data-category="web">
+      <div class="shot">
+        <img src="images/weathernow.png" alt="Screenshot of the WeatherNow application interface" width="1000" height="625" loading="lazy">
+        <span class="shot-badge">Click to enlarge</span>
+      </div>
+      <div>
+        <p class="meta">React &middot; Tailwind CSS &middot; Open-Meteo API</p>
+        <h2>WeatherNow</h2>
+        <p>A responsive weather application built with React and Tailwind CSS. It delivers live meteorological conditions, multi-day forecasts, and automated geolocation using Open-Meteo and IPInfo APIs.</p>
+        <div class="links">
+          <a href="https://weather-now-web-app.vercel.app/" target="_blank" rel="noopener">Try the app &rarr;</a>
+          <a href="https://github.com/thecybervendetta/WeatherNow" target="_blank" rel="noopener">View on GitHub &rarr;</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="project reveal" id="planner-site" data-category="web">
+      <div class="shot">
+        <img src="images/planner.png" alt="Screenshot of the Academic Planner page of this website" width="1000" height="625" loading="lazy">
+        <span class="shot-badge">Click to enlarge</span>
+      </div>
+      <div>
+        <p class="meta">Vanilla HTML5 &middot; CSS3 &middot; ES6 JavaScript</p>
+        <h2>Academic Planner &amp; Portfolio</h2>
+        <p>This personal portfolio and academic task tracker, built for COS 106 with zero heavy frameworks. The planner lets you prioritize tasks, track progress against assignments, and preserves state in local browser storage across visits.</p>
+        <div class="links">
+          <a href="planner.html">Try the planner &rarr;</a>
+          <a href="contact.html">Get in touch &rarr;</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <!-- Lightbox Modal -->
+  <dialog id="lightbox-modal" class="lightbox-dialog" aria-label="Image preview">
+    <div class="lightbox-wrapper">
+      <button type="button" id="lightbox-close" class="lightbox-close" aria-label="Close image preview">&times;</button>
+      <img id="lightbox-img" src="" alt="">
+      <p id="lightbox-caption" class="lightbox-caption"></p>
+    </div>
+  </dialog>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Richard Uwumwonse. Built for COS 106, Miva Open University.</p>
+      <p><a href="https://github.com/thecybervendetta" target="_blank" rel="noopener">GitHub</a> &middot;
+         <a href="https://linkedin.com/in/richard-uwumwonse" target="_blank" rel="noopener">LinkedIn</a> &middot;
+         <a href="mailto:r.uwumwonse1504@miva.edu.ng">Email</a></p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

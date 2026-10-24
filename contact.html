@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Richard Uwumwonse</title>
+  <meta name="description" content="Contact Richard Uwumwonse for security roles, internships, or web collaborations.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Mono&family=Public+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a href="index.html" class="logo">Richard Uwumwonse</a>
+      <div class="nav-cluster">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="planner.html">Planner</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Switch to terminal theme" title="Toggle theme">
+          <span class="theme-icon" aria-hidden="true">&#9680;</span>
+          <span class="theme-label">Terminal</span>
+        </button>
+      </div>
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <header class="page-head">
+      <p class="kicker">Get in touch &middot; Direct communication &middot; <span class="city-clock">WAT</span></p>
+      <h1>Say hello</h1>
+      <p class="lead">Interested in an internship, a red team role, tool testing, or collaborating on a project? Drop a line below.</p>
+    </header>
+
+    <section class="contact-grid">
+      <aside class="contact-aside">
+        <div class="contact-card">
+          <h2>Reach out directly</h2>
+          <ul class="plain">
+            <li>
+              <span><a href="mailto:r.uwumwonse1504@miva.edu.ng">r.uwumwonse1504@miva.edu.ng</a></span>
+              <button class="copy-btn" data-copy="r.uwumwonse1504@miva.edu.ng" type="button" title="Copy email">Copy</button>
+            </li>
+            <li>
+              <span><a href="tel:+2348109773147">+234 810 977 3147</a></span>
+              <button class="copy-btn" data-copy="+2348109773147" type="button" title="Copy phone number">Copy</button>
+            </li>
+            <li>
+              <span>Benin City, Edo State, Nigeria</span>
+            </li>
+            <li>
+              <span><a href="https://linkedin.com/in/richard-uwumwonse" target="_blank" rel="noopener">LinkedIn profile &rarr;</a></span>
+            </li>
+            <li>
+              <span><a href="https://github.com/thecybervendetta" target="_blank" rel="noopener">GitHub repositories &rarr;</a></span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="local-time-card">
+          <p><strong>Benin City timezone:</strong> West Africa Time (UTC+1).</p>
+          <p style="margin-top: .4rem;" class="note">Currently <span class="city-clock">loading time...</span> &mdash; usually available for messages and reply within 24 hours.</p>
+        </div>
+      </aside>
+
+      <div>
+        <form id="contact-form" novalidate>
+          <div id="success" class="success" role="status"></div>
+
+          <!-- Quick Topic Selector -->
+          <div class="topic-selector">
+            <span class="topic-label">What's on your mind?</span>
+            <div class="topic-chips">
+              <button type="button" class="topic-chip" data-topic="Internship / Red Team Role">Internship / Red Team</button>
+              <button type="button" class="topic-chip" data-topic="Vulnerability Assessment / VAPT">VAPT / Pentesting</button>
+              <button type="button" class="topic-chip" data-topic="Project Collaboration">Project Collab</button>
+              <button type="button" class="topic-chip" data-topic="General Enquiry">Just Saying Hi</button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="name">Your name</label>
+            <input type="text" id="name" name="name" autocomplete="name" placeholder="e.g. Alex Smith" required>
+            <p class="error" id="name-error"></p>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" id="email" name="email" autocomplete="email" placeholder="e.g. alex@example.com" required>
+            <p class="error" id="email-error"></p>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone number <span class="note" style="font-weight:normal">(optional)</span></label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="Digits only, e.g. 08012345678">
+            <p class="error" id="phone-error"></p>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell me what you're working on or how I can contribute..." required></textarea>
+            <p class="error" id="message-error"></p>
+          </div>
+
+          <button type="submit" class="btn">Send message &rarr;</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Richard Uwumwonse. Built for COS 106, Miva Open University.</p>
+      <p><a href="https://github.com/thecybervendetta" target="_blank" rel="noopener">GitHub</a> &middot;
+         <a href="https://linkedin.com/in/richard-uwumwonse" target="_blank" rel="noopener">LinkedIn</a> &middot;
+         <a href="mailto:r.uwumwonse1504@miva.edu.ng">Email</a></p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/contact.js"></script>
+</body>
+</html>
