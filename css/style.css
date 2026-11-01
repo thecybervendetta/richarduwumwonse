@@ -270,6 +270,18 @@ p + p { margin-top: 1rem; }
   align-items: center;
   padding: 4.5rem 0 3.5rem;
 }
+.audio-intro { margin-top: 1.25rem; }
+.audio-intro p {
+  margin: 0 0 .45rem;
+  color: var(--muted);
+  font-size: .9rem;
+  font-weight: 600;
+}
+.audio-intro audio {
+  display: block;
+  width: 100%;
+  max-width: 24rem;
+}
 .hero-actions { display: flex; gap: .9rem; flex-wrap: wrap; margin-top: 2rem; }
 .hero-callout {
   margin-top: 1.8rem;
